@@ -1,0 +1,39 @@
+﻿@model List<PersonaR>
+<h1>Lista de Personas R</h1>
+<div>
+    <a asp-controller="PersonaR" asp-action="Create" class="btn btn-primary">Nuevo</a>
+    <br />
+    <br />
+
+    @if (Model != null)
+    {
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <td>Nombre</td>
+                    <td>Apellido</td>
+                    <td>Fecha Nacimiento</td>
+                    <td>Sueldo</td>
+                    <td>Estatus</td>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var personaR in Model)
+                {
+                    <tr>
+                        <th>@personaR.NombreR</th>
+                        <th>@personaR.ApellidoR</th>
+                        <th>@personaR.FechaNacimientoR</th>
+                        <th>@personaR.SueldoR</th>
+                        <th>@personaR.EstatusR</th>
+
+                        <th>
+                            <a class="btn btn-primary" asp-contpersonaRler="PersonaR" asp-action="Edit" asp-route-id="@personaR.Id">Editar</a> |
+                            <a class="btn btn-danger" asp-contPersonaRler="PersonaR" asp-action="Delete" asp-route-id="@personaR.Id">Eliminar</a>
+                        </th>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+</div>

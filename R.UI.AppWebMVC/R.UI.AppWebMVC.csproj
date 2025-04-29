@@ -7,6 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="8.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\R.EntidadesNegocio\R.EntidadesNegocio.csproj" />
     <ProjectReference Include="..\R.LogicaNegocio\R.LogicaNegocio.csproj" />
   </ItemGroup>

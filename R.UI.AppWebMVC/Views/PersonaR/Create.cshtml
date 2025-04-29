@@ -1,0 +1,41 @@
+﻿@model PersonaR
+
+<div class="card">
+    <div class="card-header bg-primary text-white">
+        <h5>Nueva Persona</h5>
+    </div>
+    <div class="card-body">
+        <form asp-action="Create" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="row">
+
+                <div class="mb-3">
+                    <label asp-for="NombreR" class="form-label"></label>
+                    <input asp-for="NombreR" class="form-control" />
+                    <span asp-validation-for="NombreR" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="ApellidoR" class="form-label"></label>
+                    <input asp-for="ApellidoR" class="form-control" />
+                    <span asp-validation-for="ApellidoR" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="FechaNacimientoR" class="form-label"></label>
+                    <input asp-for="FechaNacimientoR" class="form-control" />
+                    <span asp-validation-for="FechaNacimientoR" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="SueldoR" class="form-label"></label>
+                    <input asp-for="SueldoR" class="form-control" />
+                    <span asp-validation-for="SueldoR" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="EstatusR" class="form-label"></label>
+                    <input asp-for="EstatusR" class="form-control" />
+                    <span asp-validation-for="EstatusR" class="text-danger"></span>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-success"> Guardar</button>
+        </form>
+    </div>
+</div>

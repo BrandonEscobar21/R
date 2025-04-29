@@ -1,6 +1,20 @@
+using Microsoft.EntityFrameworkCore;
+using R.AccesoDatos;
+using R.LogicaNegocio;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+
+builder.Services.AddDbContext<RDbContext>(opitons =>
+{
+    var conexionString = builder.Configuration.GetConnectionString("Conn");
+    opitons.UseMySql(conexionString, ServerVersion.AutoDetect(conexionString));
+});
+
+builder.Services.AddScoped<PersonaRDAL>();
+builder.Services.AddScoped<PersonaRBL>();
+
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
